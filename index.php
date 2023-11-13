@@ -24,11 +24,11 @@
             <div class="newAluno">
                 <form method="post" action="index.php">
                     <input type="text" name="nName" id="iName" placeholder="Nome do aluno" class="inputName">
-                    <input type="number" name="" id="iT1" class="inputNota">
-                    <input type="number" name="" id="iT2" class="inputNota">
-                    <input type="number" name="" id="iP1" class="inputNota">
-                    <input type="number" name="" id="iP2" class="inputNota">
-                    <button class="result">
+                    <input type="number" name="nT1" id="iT1" class="inputNota" maxlength="20">
+                    <input type="number" name="nT2" id="iT2" class="inputNota">
+                    <input type="number" name="nP1" id="iP1" class="inputNota">
+                    <input type="number" name="nP2" id="iP2" class="inputNota">
+                    
                     <?php
                     $t1 = $_POST["nT1"];
                     $t2 = $_POST["nT2"];
@@ -37,14 +37,14 @@
             
                     $media = ($t1 + $t2 + $p1 + $p2) / 2;
             
-                    if ($media > 70) {
+                    if ($media > 30) {
                         echo "Aprovado!";
                     } else {
                         echo "Reprovado";
                     }
             
                     ?>
-                    </button>
+                    
             </form>
             </div>
             
