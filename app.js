@@ -5,7 +5,7 @@ enviar.addEventListener('click', notaAluno())
 
 function notaAluno() {
     const buttonEnviar = document.getElementById("#enviar")
-    buttonEnviar.style.display = "none"
+    buttonEnviar.document.style.display = "none"
 }
 
 function newAluno() {

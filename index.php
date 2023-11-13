@@ -4,26 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
-
-
-    <?php
-        $t1 = $_POST["nT1"];
-        $t2 = $_POST["nT2"];
-        $p1 = $_POST["nP1"];
-        $p2 = $_POST["nP2"];
-
-        $media = ($t1 + $t2 + $p1 + $p2) / 2;
-
-        if ($media > 70) {
-            echo "Aprovado";
-        } else {
-            echo "Reprovado";
-        }
-
-    
-    ?>
+<header id="header">
+        <h1 class="title"> Sistemas de Notas</h1>
+    </header>
+    <div class="boxalunos">
+        <div class="materia">
+            <p>Trabalho 1 - T1</p>
+            <p>Trabalho 2 - T2</p>
+            <p>Prova 1 - P1</p>
+            <p>Prova 2 - P2</p>
+            <p>Situação</p>
+        </div>
+        <div class="container">
+            <div class="newAluno">
+                <form method="post" action="index.php">
+                    <input type="text" name="nName" id="iName" placeholder="Nome do aluno" class="inputName">
+                    <input type="number" name="" id="iT1" class="inputNota">
+                    <input type="number" name="" id="iT2" class="inputNota">
+                    <input type="number" name="" id="iP1" class="inputNota">
+                    <input type="number" name="" id="iP2" class="inputNota">
+                    <button class="result">
+                    <?php
+                    $t1 = $_POST["nT1"];
+                    $t2 = $_POST["nT2"];
+                    $p1 = $_POST["nP1"];
+                    $p2 = $_POST["nP2"];
+            
+                    $media = ($t1 + $t2 + $p1 + $p2) / 2;
+            
+                    if ($media > 70) {
+                        echo "Aprovado!";
+                    } else {
+                        echo "Reprovado";
+                    }
+            
+                    ?>
+                    </button>
+            </form>
+            </div>
+            
+        </div>
+        <button class="inserir" id="inserir">Inserir aluno</button>
+    </div>
 </body>
 </html>
